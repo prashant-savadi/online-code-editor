@@ -1,0 +1,81 @@
+.container {
+  position: absolute;
+  left: 16%;
+  width: 75%;
+  top: 37px;
+  border-radius: 50px;
+}
+
+.navbar-default {
+  position: absolute;
+  left: 90.20%;
+  width: 9.7%;
+  top: -15px;
+  margin-top: 50px;
+}
+
+.container > div > span > a {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  border-color: lightgray;
+  border-style: solid;
+  border-radius: 10px
+}
+
+.navbar-nav > li > a {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+#smallnavbar {
+  min-height: 48px !important
+}
+
+.container-fluid {
+  width: -30px;
+}
+
+scrollmenu {
+  width: 50px;
+}
+
+div.scrollmenu {
+  background-color: #F5F5F5;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+}
+
+span {
+  color: #2E2E2E;
+}
+
+.tabnames {
+  color: #2E2E2E;
+}
+
+a {
+  color: black;
+}
+
+.fa-window-close-o, .fa-arrows-alt {
+  color: red;
+}
+
+#main-code-editor {
+  position: absolute;
+  top: 37px;
+  left: 16.8%;
+  width: 73.4%;
+}
