@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NodeMenuItemAction, TreeModel, TreeModelSettings} from 'ng2-tree';
 import {Tree} from 'ng2-tree';
+import {MockServerService} from '../mock-server.service';
 
 @Component({
   selector: 'app-file-browser',
@@ -14,28 +15,10 @@ export class FileBrowserComponent implements OnInit {
 
   settings = '';
 
-  public tree: TreeModel = {
-    value: 'Root Folder',
-    id: 1,
-    children: [
-      {
-        value: 'Test Folder',
-        id: 2,
-        children: [
-          {
-            value: 'sample1.java',
-            id: 21,
-          },
-          {
-            value: 'sample2.java',
-            id: 22,
-          },
-        ]
-      },
-    ]
-  };
+  public tree: TreeModel;
 
-  constructor() {
+  constructor(private mockServerSevice: MockServerService) {
+    this.tree = mockServerSevice.getTreeModel();
   }
 
   ngOnInit() {
@@ -52,8 +35,22 @@ export class FileBrowserComponent implements OnInit {
 
   handleSelected($event) {
     console.log('Called method: handleSelected');
-    this.fileClicked = true;
-    this.fileSelected = $event.node.id;
+    // if (this.iFile($event)) {
+      this.fileClicked = true;
+      this.fileSelected = $event.node.id;
+      // this.selectedFileIdParent.emit(String($event.node.id));
+    // }
+  }
+
+  iFile($event): boolean {
+    console.log('-------------------isFile-------------started');
+    console.log($event);
+    let allMenuItems = $event.node.menuItems;
+    console.log('Menu items length: ' + allMenuItems.length);
+    if (allMenuItems.length === 10) {
+      return true;
+    }
+    return false;
   }
 
   handleRemoved($event): void {
