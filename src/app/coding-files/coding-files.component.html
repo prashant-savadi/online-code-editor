@@ -1,1 +1,58 @@
-<div>This is code from file browser: {{displayChangedData}}</div>
+<!--<div>This is code from file browser: {{displayChangedData}}</div>-->
+
+<div id="main-code-editor">
+  <mat-tab-group [(selectedIndex)]="activeTabIndex">
+  <span *ngFor="let tab of tabs">
+    <mat-tab>
+        <ng-template mat-tab-label>
+          {{tab.name}} &nbsp;  &nbsp;
+            <i class="fa fa-arrows-alt" aria-hidden="true" (click)="removeTab($event)" id="{{tab.name}}"></i>
+        </ng-template>
+      <section id="{{ tab.name }}">
+        <ace-editor #highlight
+                    text="{{ tab.code }}"
+                    mode="javascript"
+                    theme="eclipse"
+                    (textChanged)="getCodeInformation($event)"
+                    [autoUpdateContent]="true"
+                    [style.top.px]="fromTop"
+                    [durationBeforeCallback]="1000"
+                    style="min-height: 600px; width:83%; overflow: auto;"></ace-editor>
+      </section>
+
+      </mat-tab>
+  </span>
+  </mat-tab-group>
+</div>
+
+<nav class="navbar navbar-default" id="smallnavbar" *ngIf="showBar">
+  <div class="container-fluid">
+    <!-- header  -->
+    <div class="navbar-header">
+      <ul class="nav navbar-nav">
+        <li class=''>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-arrows-alt" aria-hidden="true" title="Close"></i><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#" (click)="closeTab()"><i class="fa fa-arrows-alt" aria-hidden="true"></i> Close</a></li>
+            <li><a href="#" (click)="closeOtherTabs()"><i class="fa fa-arrows-alt" aria-hidden="true"></i> Close Others</a>
+            </li>
+            <li><a href="#" (click)="closeAllTabs()"><i class="fa fa-arrows-alt" aria-hidden="true"></i> Close All</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapse navbar-collapse" id="topNavBar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class=''>
+          <a href="#">
+            <i class="fa fa-window-maximize" aria-hidden="true" title="Maximize"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
