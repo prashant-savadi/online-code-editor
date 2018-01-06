@@ -1,6 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {NodeMenuItemAction, TreeModel, TreeModelSettings} from 'ng2-tree';
-import {Tree} from 'ng2-tree';
+import {TreeModel} from 'ng2-tree';
 import {MockServerService} from '../mock-server.service';
 
 @Component({
@@ -26,22 +25,12 @@ export class FileBrowserComponent implements OnInit {
   ngOnInit() {
   }
 
-  triggerFileSelected() {
-    console.log('Called: triggerFileSelected');
-    this.fileClicked = true;
-
-    let dt = new Date();
-    this.fileSelected = dt.toUTCString();
-  }
-
-
   handleSelected($event) {
     console.log('Called method: handleSelected');
-    // if (this.iFile($event)) {
+    if (this.iFile($event)) {
       this.fileClicked = true;
       this.fileSelected = $event.node.id;
-      // this.selectedFileIdParent.emit(String($event.node.id));
-    // }
+    }
   }
 
   iFile($event): boolean {

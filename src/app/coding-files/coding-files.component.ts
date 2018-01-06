@@ -41,13 +41,7 @@ export class CodingFilesComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    // if (changes['fileSelected']) {
-    //   console.log('By Omkar!!' + this.fileSelected);
-    //   this.displayChangedData = this.fileSelected;
-    // }
-
     if (changes['fileSelected']) {
-      console.log('By Omkar!!' + this.fileSelected);
       console.log('Collected File ID: ' + this.treeModelService.getFileName(Number(this.fileSelected)));
       let selectedFileName = this.treeModelService.getFileName(Number(this.fileSelected));
       // console.log('------------------------------- Map Size: ' + this.allFileCodesMap.size);
@@ -184,5 +178,4 @@ export class CodingFilesComponent implements OnInit, OnChanges {
       this.showBar = false;
     }
   }
-
 }
