@@ -1,0 +1,83 @@
+i {
+  color: white;
+}
+
+a, p {
+  font-family: Courier;
+  color: white;
+}
+
+.fa-arrows-alt {
+  color: red;
+}
+
+.fa-compress, .fa-expand {
+  color: #2E2E2E;
+}
+
+.fa-refresh {
+  color: darkgreen;
+}
+
+.fa-exchange {
+  color: #FF8800;
+}
+
+.horizontal-container {
+  min-height: 0 !important;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: auto;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.scrollable-content {
+  padding: 16px;
+  margin: 0;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: auto;
+  min-width: 400px;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.ps {
+  position: absolute;
+  max-width: 228px;
+  max-height: 88%;
+  background-color: #F5F5F5;
+  top: 85px;
+  margin-top: 0px;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.navbar-default {
+  position: absolute;
+  left: 4px;
+  width: 16.5%;
+  top: -15px;
+  margin-top: 50px;
+}
+
+.navbar-nav > li > a {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+#navbarFileBrowser {
+  min-height: 48px !important
+}
+
+.maincontainer {
+  width: 16.5%;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+tree {
+  margin-left: 0px;
+  padding-left: 0px;
+}

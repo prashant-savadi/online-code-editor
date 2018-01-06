@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {NodeMenuItemAction, TreeModel, TreeModelSettings} from 'ng2-tree';
 import {Tree} from 'ng2-tree';
 import {MockServerService} from '../mock-server.service';
@@ -14,6 +14,8 @@ export class FileBrowserComponent implements OnInit {
   fileSelected = '';
 
   settings = '';
+  config = '';
+  @ViewChild('treeComponent') treeComponent;
 
   public tree: TreeModel;
 
@@ -110,6 +112,14 @@ export class FileBrowserComponent implements OnInit {
 
   handleExpanded($event): void {
     console.log($event);
+  }
+
+  collpaseAll(): void {
+    this.treeComponent.getControllerByNodeId(1).collapse();
+  }
+
+  expandAll(): void {
+    this.treeComponent.getControllerByNodeId(1).expand();
   }
 
 }

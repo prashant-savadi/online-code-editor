@@ -1,23 +1,58 @@
 <!--<button (click)="triggerFileSelected()">Trigger File Selected</button>-->
+<div class="maincontainer">
+
+  <nav class="navbar navbar-default" id="navbarFileBrowser">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav navbar-right">
+          <li class=''>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-expand fa-lg" aria-hidden="true" title="Expand All" (click)="expandAll()"></i>
+            </a>
+          </li>
+          <li class=''>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-compress fa-lg" aria-hidden="true" title="Collapse All" (click)="collpaseAll()"></i>
+            </a>
+          </li>
+          <li class=''>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-refresh fa-lg" aria-hidden="true" title="Refresh"></i>
+            </a>
+          </li>
+          <li class=''>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-exchange fa-lg" aria-hidden="true" title="Link To Editor"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 
+  <perfect-scrollbar class="ps" [perfectScrollbar]="config">
+  <div class="horizontal-container" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="stretch" fxFlex="auto">
+    <div class="scrollable-content">
 
+      <tree
+        [tree]="tree" #treeComponent
+        [settings]="settings"
+        (nodeRemoved)="handleRemoved($event)"
+        (nodeRenamed)="handleRenamed($event)"
+        (nodeSelected)="handleSelected($event)"
+        (nodeMoved)="handleMoved($event)"
+        (nodeCreated)="handleCreated($event)"
+        (nodeExpanded)="handleExpanded($event)"
+        (nodeCollapsed)="handleCollapsed($event)"
+        (loadNextLevel)="handleNextLevel($event)"
+        (menuItemSelected)="onMenuItemSelected($event)">
+      </tree>
 
-<tree
-  [tree]="tree" #treeComponent
-  [settings]="settings"
-  (nodeRemoved)="handleRemoved($event)"
-  (nodeRenamed)="handleRenamed($event)"
-  (nodeSelected)="handleSelected($event)"
-  (nodeMoved)="handleMoved($event)"
-  (nodeCreated)="handleCreated($event)"
-  (nodeExpanded)="handleExpanded($event)"
-  (nodeCollapsed)="handleCollapsed($event)"
-  (loadNextLevel)="handleNextLevel($event)"
-  (menuItemSelected)="onMenuItemSelected($event)">
-</tree>
-
-
+    </div>
+  </div>
+  </perfect-scrollbar>-->
+</div>
 
 
 <ng-container *ngIf="fileClicked">
