@@ -1,0 +1,25 @@
+<!--<button (click)="triggerFileSelected()">Trigger File Selected</button>-->
+
+
+
+
+<tree
+  [tree]="tree" #treeComponent
+  [settings]="settings"
+  (nodeRemoved)="handleRemoved($event)"
+  (nodeRenamed)="handleRenamed($event)"
+  (nodeSelected)="handleSelected($event)"
+  (nodeMoved)="handleMoved($event)"
+  (nodeCreated)="handleCreated($event)"
+  (nodeExpanded)="handleExpanded($event)"
+  (nodeCollapsed)="handleCollapsed($event)"
+  (loadNextLevel)="handleNextLevel($event)"
+  (menuItemSelected)="onMenuItemSelected($event)">
+</tree>
+
+
+
+
+<ng-container *ngIf="fileClicked">
+  <app-coding-files [fileSelected]="fileSelected"></app-coding-files>
+</ng-container>
