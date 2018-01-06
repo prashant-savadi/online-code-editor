@@ -1,0 +1,21 @@
+.container-fluid {
+  width: -30px;
+}
+
+.fa-arrows-alt, .fa-stop {
+  color: red;
+}
+
+.fa-search, .fa-cog, .fa-file-text-o, .fa-folder-open-o, .fa-floppy-o, .fa-folder-o {
+  color: slateblue;
+}
+
+.navbar-nav > li > a {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+.navbar {
+  min-height: 5px !important;
+  min-width: 100%
+}

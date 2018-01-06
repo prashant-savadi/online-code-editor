@@ -21,6 +21,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {AppService} from './app.service';
 import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
+import { MenubarComponent } from './menubar/menubar.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -30,7 +31,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   declarations: [
     AppComponent,
     FileBrowserComponent,
-    CodingFilesComponent
+    CodingFilesComponent,
+    MenubarComponent
   ],
   imports: [
     BrowserModule,
